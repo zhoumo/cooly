@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Props xmlns="http://funshion.com/maven/plugin/configreplace/schemas">
+	<Prop name="demo">zhoumo</Prop>
+</Props>
