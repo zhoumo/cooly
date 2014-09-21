@@ -77,8 +77,7 @@ public class ConfigReplace extends AbstractMojo {
 				}
 			}
 		} catch (Exception e) {
-			getLog().error(e);
-			throw new MojoExecutionException("Fail to execute cooly:replace, Message: " + e.getMessage(), e);
+			getLog().error(e.getMessage());
 		}
 	}
 
