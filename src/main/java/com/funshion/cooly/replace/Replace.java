@@ -58,17 +58,14 @@ public class Replace extends AbstractMojo {
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		try {
-			String regex = StringUtils.escape(propPrefix, REG_EXP_TRIGGER_CHARS, '\\') + ".*?" + StringUtils.escape(propSuffix, REG_EXP_TRIGGER_CHARS, '\\');
-			getLog().info("regex: " + regex);
-			verifyReg = Pattern.compile(regex);
+			verifyReg = Pattern.compile(StringUtils.escape(propPrefix, REG_EXP_TRIGGER_CHARS, '\\') + ".*?" + StringUtils.escape(propSuffix, REG_EXP_TRIGGER_CHARS, '\\'));
 			extName = "." + extName;
 			loadPropsFromXml(basedir + File.separatorChar + propsFilename);
 			for (String dir : directoryToOperate.split(",")) {
 				if (!StringUtils.isBlank(dir)) {
 					dir = projectBuildDirectory + File.separatorChar + dir;
 					getLog().info("Scanning directory : " + dir);
-					File file = new File(dir);
-					File[] files = file.listFiles();
+					File[] files = new File(dir).listFiles();
 					if (files != null) {
 						for (File item : files) {
 							doReplace(item);
@@ -77,7 +74,7 @@ public class Replace extends AbstractMojo {
 				}
 			}
 		} catch (Exception e) {
-			getLog().error(e.getMessage());
+			getLog().warn(e.getMessage());
 		}
 	}
 
@@ -109,19 +106,17 @@ public class Replace extends AbstractMojo {
 				new File(filepath).delete();
 			}
 		} else if (file.isDirectory()) {
-			File[] files = file.listFiles();
-			for (File item : files) {
+			for (File item : file.listFiles()) {
 				doReplace(item);
 			}
 		}
 	}
 
 	private String loadFileContent(String path) throws Exception {
-		File file = new File(path);
 		BufferedReader reader = null;
 		StringBuffer buff = new StringBuffer();
 		try {
-			reader = new BufferedReader(new FileReader(file));
+			reader = new BufferedReader(new FileReader(new File(path)));
 			String tempString = null;
 			while ((tempString = reader.readLine()) != null) {
 				buff.append(tempString).append("\n");
@@ -141,10 +136,9 @@ public class Replace extends AbstractMojo {
 	}
 
 	private void saveFileContent(String path, String content) throws Exception {
-		File file = new File(path);
 		BufferedWriter writer = null;
 		try {
-			writer = new BufferedWriter(new FileWriter(file));
+			writer = new BufferedWriter(new FileWriter(new File(path)));
 			writer.write(content);
 			writer.flush();
 		} catch (Exception e) {
