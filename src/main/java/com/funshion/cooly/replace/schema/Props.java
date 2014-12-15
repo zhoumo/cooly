@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = { "prop" })
 @XmlRootElement(name = "Props")
 public class Props {
-	
+
 	@XmlElement(name = "Prop")
 	protected List<Prop> prop;
 

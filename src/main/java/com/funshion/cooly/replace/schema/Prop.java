@@ -11,10 +11,10 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "", propOrder = { "value" })
 @XmlRootElement(name = "Prop")
 public class Prop {
-	
+
 	@XmlValue
 	protected String value;
-	
+
 	@XmlAttribute(name = "name", required = true)
 	protected String name;
 
