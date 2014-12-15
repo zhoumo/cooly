@@ -1,4 +1,4 @@
-package com.funshion.maven.plugin.sdk.xml.cr;
+package com.funshion.cooly.replace.schema;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

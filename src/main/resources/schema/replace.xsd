@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:cr="http://funshion.com/maven/plugin/configreplace/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" targetNamespace="http://funshion.com/maven/plugin/configreplace/schemas">
+<xs:schema xmlns:r="http://funshion.com/cooly/schema/replace" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://funshion.com/cooly/schema/replace">
 	<xs:element name="Props">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element maxOccurs="unbounded" minOccurs="0" ref="cr:Prop" />
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="r:Prop" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

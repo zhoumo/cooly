@@ -1,4 +1,4 @@
-package com.funshion.maven.plugin.sdk.xml.cr;
+package com.funshion.cooly.replace.schema;
 
 import java.util.ArrayList;
 import java.util.List;

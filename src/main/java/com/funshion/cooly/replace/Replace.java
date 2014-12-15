@@ -1,4 +1,4 @@
-package com.funshion.maven.plugin;
+package com.funshion.cooly.replace;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -23,11 +23,11 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.codehaus.plexus.util.StringUtils;
 
-import com.funshion.maven.plugin.sdk.xml.cr.Prop;
-import com.funshion.maven.plugin.sdk.xml.cr.Props;
+import com.funshion.cooly.replace.schema.Prop;
+import com.funshion.cooly.replace.schema.Props;
 
 @Mojo(name = "replace", defaultPhase = LifecyclePhase.PROCESS_TEST_CLASSES)
-public class ConfigReplace extends AbstractMojo {
+public class Replace extends AbstractMojo {
 
 	@Parameter(property = "extName", defaultValue = "ci_tmpl")
 	private String extName;
@@ -162,7 +162,7 @@ public class ConfigReplace extends AbstractMojo {
 
 	private void loadPropsFromXml(String filepath) throws Exception {
 		getLog().info("Load variables from :" + filepath);
-		JAXBContext cxt = JAXBContext.newInstance("com.funshion.maven.plugin.sdk.xml.cr");
+		JAXBContext cxt = JAXBContext.newInstance("com.funshion.cooly.replace.schema");
 		Unmarshaller unm = cxt.createUnmarshaller();
 		FileInputStream fis = null;
 		try {
