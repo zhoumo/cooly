@@ -1,32 +1,33 @@
-# POMÒıÓÃÑùÀı
-<plugin>
-	<groupId>com.funshion.maven.plugin</groupId>
-	<artifactId>cooly</artifactId>
-	<version>0.1</version>
-	<executions>
-		<execution>
-			<goals>
-				<goal>replace</goal>
-			</goals>
-			<phase>test</phase>
-			<configuration>
-				<!-- ¼ÇÂ¼ÅäÖÃĞÅÏ¢µÄÎÄ¼şÃû -->
-				<propsFilename>./ci_props.xml</propsFilename>
-				<!-- ÒªÌæ»»µÄÀ©Õ¹Ãû -->
-				<extName>ci_tmpl</extName>
-				<!-- ¶ÔÄÄĞ©Ä¿Â¼ÏÂµÄÄÚÈİ½øĞĞ²éÕÒÌæ»»²Ù×÷ -->
-				<directoryToOperate>classes,test-classes</directoryToOperate>
-				<!-- ÓÃÓÚÆ¥Åä±äÁ¿µÄÇ°×º -->
-				<propPrefix>${</propPrefix>
-				<!-- ÓÃÓÚÆ¥Åä±äÁ¿µÄºó×º -->
-				<propSuffix>}</propSuffix>
-			</configuration>
-		</execution>
-	</executions>
-</plugin>
+### POMå¼•ç”¨æ ·ä¾‹
+###
+	<plugin>
+		<groupId>com.funshion.maven.plugin</groupId>
+		<artifactId>cooly</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>replace</goal>
+				</goals>
+				<phase>test</phase>
+				<configuration>
+					<!-- è®°å½•é…ç½®ä¿¡æ¯çš„æ–‡ä»¶å -->
+					<propsFilename>./ci_props.xml</propsFilename>
+					<!-- è¦æ›¿æ¢çš„æ‰©å±•å -->
+					<extName>ci_tmpl</extName>
+					<!-- å¯¹å“ªäº›ç›®å½•ä¸‹çš„å†…å®¹è¿›è¡ŒæŸ¥æ‰¾æ›¿æ¢æ“ä½œ -->
+					<directoryToOperate>classes,test-classes</directoryToOperate>
+					<!-- ç”¨äºåŒ¹é…å˜é‡çš„å‰ç¼€ -->
+					<propPrefix>${</propPrefix>
+					<!-- ç”¨äºåŒ¹é…å˜é‡çš„åç¼€ -->
+					<propSuffix>}</propSuffix>
+				</configuration>
+			</execution>
+		</executions>
+	</plugin>
 
-# Ä£°åÎÄ¼şÑùÀı
-
-<Props xmlns="http://funshion.com/maven/plugin/cooly/schemas">
-	<Prop name="example">zhoumo</Prop>
-</Props>
+### æ¨¡æ¿æ–‡ä»¶æ ·ä¾‹
+###
+	<Props xmlns="http://funshion.com/maven/plugin/cooly/schemas">
+		<Prop name="example">zhoumo</Prop>
+	</Props>
